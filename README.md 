@@ -1,0 +1,77 @@
+# 🤖 Assistente Pessoal com Ruby, Gemini API e WhatsApp
+
+Este projeto é um **assistente pessoal automatizado**, feito em Ruby, que integra a **API Gemini da Google** com o **WhatsApp Web** via **Capybara** e **Selenium WebDriver**. Ele lê mensagens de qualquer conversa e responde com inteligência emocional baseada no conteúdo recebido.
+
+## 🔥 Tecnologias Utilizadas
+
+- **Ruby**
+- **Selenium WebDriver** – usado para controlar o navegador (Chrome) e interagir com o WhatsApp Web.
+- **Capybara** – biblioteca de automação para simular interações no navegador.
+- **Gemini API (Google AI)** – geração de respostas inteligentes e empáticas.
+- **dotenv** – para gerenciar com segurança a chave da API.
+
+## 💡 O que o bot faz
+
+- Acessa automaticamente o WhatsApp Web
+- Abre uma conversa específica (você pode alterar para qualquer uma)
+- Lê as últimas mensagens recebidas
+- Envia essas mensagens para a API do Gemini com um prompt customizado
+- Responde de forma **empática, direta e inteligente**, como se fosse seu assistente pessoal
+
+## 📦 Instalação
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/seu-usuario/assistente-pessoal-gemini.git
+cd assistente-pessoal-gemini
+
+2. Instale as dependências
+
+bundle install
+
+3. Crie um arquivo .env baseado no .env.example
+
+GEMINI_API_KEY=sua_chave_aqui
+
+4. Execute o bot
+
+ruby gemini_bot.rb
+
+
+## ⚙️ Personalização
+
+    ### 🗣 Alterar a conversa que o bot responde
+    No código `gemini_bot.rb`, localize esta linha:
+
+    ```ruby
+        find('span', text: 'Twilio', match: :first).click
+        ###Substitua 'Twilio' pelo nome exato da pessoa ou grupo com quem você quer conversar no WhatsApp.###
+
+    ### Você pode alterar o prompt enviado para o Gemini modificando esta parte do código:
+
+        context = <<~CONTEXT
+        Minha namorada tá me mandando mensagens. Baseado nas últimas mensagens dela, identifique o que está acontecendo e responda de forma empática, direta e inteligente.
+        Responda como se fosse o assistente pessoal do Lithierry, demonstrando que está atento às emoções dela. Mas atenção: a resposta deve ser feita em apenas UMA mensagem, como se fosse enviada diretamente no WhatsApp. Não inclua análises, explicações ou múltiplas mensagens. Apenas envie uma resposta única, que já transmita empatia, inteligência emocional e clareza.
+
+
+## 🔒 Sessão persistente (login único)
+
+O bot usa um perfil customizado do Chrome para **manter a sessão do WhatsApp Web ativa entre execuções**, sem precisar escanear o QR Code toda vez.
+
+No trecho abaixo do código:
+
+```ruby
+user_data_dir = "/home/lithierry/.config/gemini-bot-profile"
+
+options = Selenium::WebDriver::Chrome::Options.new
+options.add_argument("--user-data-dir=#{user_data_dir}")
+
+
+Requisitos
+
+    Desenvolvido e testado no Linux
+
+    Requer o Google Chrome instalado
+
+    Atualize o caminho de user_data_dir conforme o seu ambiente!!!

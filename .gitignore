@@ -1,0 +1,6 @@
+*.env
+*.log
+*.lock
+/tmp
+*.swp
+.DS_Store
