@@ -51,9 +51,7 @@ ruby gemini_bot.rb
     ### Você pode alterar o prompt enviado para o Gemini modificando esta parte do código:
 
         context = <<~CONTEXT
-        Minha namorada tá me mandando mensagens. Baseado nas últimas mensagens dela, identifique o que está acontecendo e responda de forma empática, direta e inteligente.
-        Responda como se fosse o assistente pessoal do Lithierry, demonstrando que está atento às emoções dela. Mas atenção: a resposta deve ser feita em apenas UMA mensagem, como se fosse enviada diretamente no WhatsApp. Não inclua análises, explicações ou múltiplas mensagens. Apenas envie uma resposta única, que já transmita empatia, inteligência emocional e clareza.
-
+        Imagine que você está respondendo mensagens de um cliente, amigo ou colega de trabalho. Baseado nas últimas mensagens, gere uma resposta empática, direta e clara, como se fosse um assistente pessoal que entende o tom da conversa.
 
 ## 🔒 Sessão persistente (login único)
 
@@ -75,3 +73,8 @@ Requisitos
     Requer o Google Chrome instalado
 
     Atualize o caminho de user_data_dir conforme o seu ambiente!!!
+
+
+## 🧪 Testes
+
+Esse projeto ainda não conta com testes automatizados, por se tratar de um experimento inicial. Em futuras versões, o objetivo é aplicar testes de integração para validar a lógica de extração e resposta.

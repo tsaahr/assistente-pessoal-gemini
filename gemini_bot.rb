@@ -69,11 +69,10 @@ class GeminiBot
     @last_replied_message = last_message
 
     context = <<~CONTEXT
-      Minha namorada tá me mandando mensagens. Baseado nas últimas mensagens dela, identifique o que está acontecendo e responda de forma empática, direta e inteligente.
-      Responda como se fosse o assistente pessoal do Lithierry, demonstrando que está atento às emoções dela. Mas atenção: a resposta deve ser feita em apenas UMA mensagem, como se fosse enviada diretamente no WhatsApp. Não inclua análises, explicações ou múltiplas mensagens. Apenas envie uma resposta única, que já transmita empatia, inteligência emocional e clareza.
-
-    As últimas mensagens dela foram:
-    #{received_messages.join("\n")}
+      Imagine que você está respondendo mensagens de um cliente, amigo ou colega de trabalho.
+      Baseado nas últimas mensagens, gere uma resposta empática, direta e clara, como se fosse um assistente pessoal que entende o tom da conversa.
+      As últimas mensagens dele foram:
+      #{received_messages.join("\n")}
     CONTEXT
 
     gemini_response = fetch_gemini_response(context)
