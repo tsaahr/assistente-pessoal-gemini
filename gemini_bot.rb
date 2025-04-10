@@ -29,7 +29,7 @@ class GeminiBot
     puts "[INFO] Aguardando login manual no WhatsApp..."
     sleep(10)
 
-    find('span', text: 'Twilio', match: :first).click
+    find('span', text: 'Meta AI', match: :first).click
     puts "[INFO] Conversa selecionada."
     sleep(5)
 
@@ -71,6 +71,7 @@ class GeminiBot
     context = <<~CONTEXT
       Imagine que você está respondendo mensagens de um cliente, amigo ou colega de trabalho.
       Baseado nas últimas mensagens, gere uma resposta empática, direta e clara, como se fosse um assistente pessoal que entende o tom da conversa.
+      Preciso que responde sempre em apenas uma mensagem e seja o direto na solução do problema ou situação que ele trouxer.
       As últimas mensagens dele foram:
       #{received_messages.join("\n")}
     CONTEXT
